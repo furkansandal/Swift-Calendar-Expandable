@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalendarFS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iiz-gd-YLm" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="T21-Ay-H6s"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-Iq-5zy">
+                                <rect key="frame" x="0.0" y="44" width="60" height="35"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="YEh-Zc-xzV"/>
+                                    <constraint firstAttribute="width" constant="60" id="mnt-ux-fZe"/>
+                                </constraints>
+                                <state key="normal" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JRL-kh-b9V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSc-qN-hgA">
+                                <rect key="frame" x="354" y="44" width="60" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="BKy-Qe-etZ"/>
+                                    <constraint firstAttribute="width" constant="60" id="dSg-qY-DOf"/>
+                                </constraints>
+                                <state key="normal" image="arrow.right" catalog="system"/>
+                                <connections>
+                                    <action selector="nextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHW-OI-ATI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa3-a1-Ne3">
+                                <rect key="frame" x="389" y="331.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="KCW-HD-2GJ"/>
+                                    <constraint firstAttribute="width" constant="25" id="cVK-R0-L8v"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow.down.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="expandBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aBO-yL-ZCN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iiz-gd-YLm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5cc-lw-OWm"/>
+                            <constraint firstItem="QSc-qN-hgA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ARw-9p-QGj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QSc-qN-hgA" secondAttribute="trailing" id="H8e-Rv-PmL"/>
+                            <constraint firstItem="5qk-Iq-5zy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I9u-x3-Xnw"/>
+                            <constraint firstAttribute="trailing" secondItem="pa3-a1-Ne3" secondAttribute="trailing" id="IHp-NH-SdR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iiz-gd-YLm" secondAttribute="trailing" id="JIc-V8-dPx"/>
+                            <constraint firstItem="pa3-a1-Ne3" firstAttribute="centerY" secondItem="Iiz-gd-YLm" secondAttribute="bottom" id="Nwg-9Y-q5f"/>
+                            <constraint firstItem="5qk-Iq-5zy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YPu-xw-Urf"/>
+                            <constraint firstItem="Iiz-gd-YLm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfK-10-0fX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="Iiz-gd-YLm" id="d0Q-DZ-nUA"/>
+                        <outlet property="calendarHeightConstraint" destination="T21-Ay-H6s" id="ixy-m2-K9B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
